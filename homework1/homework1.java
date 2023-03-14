@@ -2,7 +2,7 @@ public class homework1 {
     
     public static void main (String[] args) {
 
-        for (int i = 1; i <= 100; ++ i) { // iterates through integers from 0 to 100 (including)
+        for (int i = 1; i <= 100; ++ i) { // iterates through integers from 1 to 100 (including)
             if ((i % 3 == 0) && (i % 5 == 0)) { // checks if it's divisbile by 5 and divisible by 3 simultaneously
                 System.out.printf("FizzBuzz "); // prints out FizzBuzz
             }
