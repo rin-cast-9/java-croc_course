@@ -1,7 +1,6 @@
 public class ChessboardCoordinates {
 
-    // this class represents coordinate system that's of a chessboard
-    // that has on the one side values from 'a' to 'h' and on the other side values from 1 to 8
+    // this class represents coordinate system that's of a chessboard that has on the one side values from 'a' to 'h' and on the other side values from 1 to 8
 
     private int x = 0; // x coordinate on a chessboard 
     private int y = 0; // y coordinate on a chessboard
