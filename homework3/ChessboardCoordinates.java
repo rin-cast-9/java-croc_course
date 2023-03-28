@@ -49,7 +49,7 @@ public class ChessboardCoordinates {
     public String toString() { // overriding toString() method to match this class implementation 
         char chessboardX = 'a'; // adding to 'a' values from 0 to 7 gives us all the chars from 'a' to 'h' 
         int chessboardY = 1; // shifting all the values allowed in the class (i.e. 0 to 7) by 1 gives us a range 1 to 8
-        return String.format("%c%d", chessboardX + this.x, chessboardY + this.y);
+        return String.format("%c%d", chessboardX + getX(), chessboardY + getY());
     }
 
 }
