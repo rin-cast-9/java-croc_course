@@ -38,13 +38,10 @@ public class Main {
         Scanner in = new Scanner(fileReader); // intializes in variable as Scanner
 
         int count = -1; // initializes the count varaible as -1 for counting words
-        String line = null; // initializes the line string for further usage
 
         while (in.hasNext()) { // while the scanner has something to read
-            line = in.next(); // reads a line from the file and assigns it to the line variable
-            String[] words = (line.trim() + " ").split("\\s+"); // trims the line, appends a space in the end*, splits by multiple space (s+) and assigns it to the array of String
-            // * so that empty lines be processed properly
-            count += words.length; // adds the length (which is the words count) of the array
+            in.next(); // reads a token
+            ++ count; // adds to count 
         }
 
         in.close(); // closes scanner
@@ -60,7 +57,7 @@ public class Main {
 
         if (args.length == 0) { // checks if something is passed to args 
             System.err.println("No arguments were passed through the command line."); // if not then provides the message 
-            throw new IllegalArgumentException(); // throws exception; the program won't be executed further
+            throw new IllegalArgumentException(); // throws exception 
         }
         
         try (FileReader fileReader = new FileReader(args[0]); FileReader fileReader2 = new FileReader(args[0])) { // initializes 2 FileReaders with args[0] as a parameter
