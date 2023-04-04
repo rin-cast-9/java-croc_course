@@ -60,7 +60,7 @@ public class Main {
 
         if (args.length == 0) { // checks if something is passed to args 
             System.err.println("No arguments were passed through the command line."); // if not then provides the message 
-            throw new IllegalArgumentException(); // throws exception 
+            throw new IllegalArgumentException(); // throws exception; the program won't be executed further
         }
         
         try (FileReader fileReader = new FileReader(args[0]); FileReader fileReader2 = new FileReader(args[0])) { // initializes 2 FileReaders with args[0] as a parameter
