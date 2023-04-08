@@ -62,6 +62,7 @@ public class Main {
     public static void main(String[] args) {
         
         try (Scanner in = new Scanner(System.in)) { // try with Scanner
+            System.out.println("Enter the file path:");
             String path = in.nextLine(); // reads a path from a user
             if (isValidPath(path)) { // checks if the path is valid
                 System.out.println(normalizePath(path)); // normalizes it and prints it if it's valid
