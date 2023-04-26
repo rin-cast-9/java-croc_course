@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sellerHasProductEntries [
+    <!ELEMENT sellerHasProductEntries (sellerHasProduct+)>
+    <!ELEMENT sellerHasProduct (cost, amount)>
+    <!ATTLIST sellerHasProduct sellerId CDATA #REQUIRED
+        productId CDATA #REQUIRED>
+    <!ELEMENT cost (#PCDATA)>
+    <!ELEMENT amount (#PCDATA)>
+]>
+
+<sellerHasProductEntries>
+    <sellerHasProduct sellerId="0" productId="1">
+        <cost>650</cost>
+        <amount>4</amount>
+    </sellerHasProduct>
+
+    <sellerHasProduct sellerId="2" productId="2">
+        <cost>800</cost>
+        <amount>14</amount>
+    </sellerHasProduct>
+
+    <sellerHasProduct sellerId="1" productId="4">
+        <cost>1200</cost>
+        <amount>7</amount>
+    </sellerHasProduct>
+
+    <sellerHasProduct sellerId="0" productId="2">
+        <cost>550</cost>
+        <amount>11</amount>
+    </sellerHasProduct>
+</sellerHasProductEntries>

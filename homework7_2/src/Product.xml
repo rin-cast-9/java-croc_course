@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE products [
+    <!ELEMENT products (product+)>
+    <!ELEMENT product (name)>
+    <!ATTLIST product id ID #REQUIRED>
+    <!ELEMENT name (#PCDATA)>
+]>
+
+<products>
+    <product id="x0">
+        <name>Laptop</name>
+    </product>
+
+    <product id="x1">
+        <name>Tablet</name>
+    </product>
+
+    <product id="x2">
+        <name>Phone</name>
+    </product>
+
+    <product id="x3">
+        <name>PC</name>
+    </product>
+
+    <product id="x4">
+        <name>VR</name>
+    </product>
+</products>

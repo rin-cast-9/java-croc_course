@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sellers [
+    <!ELEMENT sellers (seller+)>
+    <!ELEMENT seller (lastName, firstName)>
+    <!ATTLIST seller id ID #REQUIRED>
+    <!ELEMENT lastName (#PCDATA)>
+    <!ELEMENT firstName (#PCDATA)>
+]>
+
+<sellers>
+    <seller id="x0">
+        <lastName>Amagiri</lastName>
+        <firstName>Ayato</firstName>
+    </seller>
+
+    <seller id="x1">
+        <lastName>Toudou</lastName>
+        <firstName>Kirin</firstName>
+    </seller>
+
+    <seller id="x2">
+        <lastName>Miyamoto</lastName>
+        <firstName>Sinka</firstName>
+    </seller>
+
+    <seller id="x3">
+        <lastName>Furusato</lastName>
+        <firstName>Kouichi</firstName>
+    </seller>
+</sellers>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sales [
+    <!ELEMENT sales (sale+)>
+    <!ELEMENT sale (sellerId, productId, amount, date)>
+    <!ATTLIST sale id ID #REQUIRED>
+    <!ELEMENT sellerId (#PCDATA)>
+    <!ELEMENT productId (#PCDATA)>
+    <!ELEMENT amount (#PCDATA)>
+    <!ELEMENT date (#PCDATA)>
+]>
+
+<sales>
+    <sale id="x0">
+        <sellerId>0</sellerId>
+        <productId>1</productId>
+        <amount>3</amount>
+        <date>2023-04-23</date>
+    </sale>
+
+    <sale id="x1">
+        <sellerId>0</sellerId>
+        <productId>1</productId>
+        <amount>1</amount>
+        <date>2023-04-24</date>
+    </sale>
+
+    <sale id="x2">
+        <sellerId>2</sellerId>
+        <productId>2</productId>
+        <amount>6</amount>
+        <date>2023-04-22</date>
+    </sale>
+
+    <sale id="x3">
+        <sellerId>1</sellerId>
+        <productId>4</productId>
+        <amount>4</amount>
+        <date>2023-04-21</date>
+    </sale>
+
+    <sale id="x4">
+        <sellerId>0</sellerId>
+        <productId>2</productId>
+        <amount>6</amount>
+        <date>2023-04-20</date>
+    </sale>
+
+    <sale id="x5">
+        <sellerId>2</sellerId>
+        <productId>2</productId>
+        <amount>15</amount>
+        <date>2023-04-19</date>
+    </sale>
+
+    <sale id="x6">
+        <sellerId>1</sellerId>
+        <productId>0</productId>
+        <amount>10</amount>
+        <date>2023-04-20</date>
+    </sale>
+</sales>
