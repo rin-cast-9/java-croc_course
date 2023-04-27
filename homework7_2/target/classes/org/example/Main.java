@@ -81,25 +81,25 @@ public class Main {
         ArrayList <Sale> sales = null;
 
         // parse them with xml parser
-        try {
-            products = Reader.readProductXML(productxml);
-            sellers = Reader.readSellerXML(sellerxml);
-            sellerHasProductEntries = Reader.readSellerHasProductXML(sellerHasProductxml);
-            sales = Reader.readSaleXML(salexml);
-        }
-        catch (Exception exception) {
-            System.err.println(exception.getMessage());
-        }
+        products = Reader.readProductXML(productxml);
+        sellers = Reader.readSellerXML(sellerxml);
+        sellerHasProductEntries = Reader.readSellerHasProductXML(sellerHasProductxml);
+        sales = Reader.readSaleXML(salexml);
 
-        // save the results of methods into corresponding collections
-        Map <Product, SimpleEntry <String, Integer>> problem1 = problem1(sellerHasProductEntries, products, sellers);
-        List <LocalDate> problem2 = problem2(sales);
+        if ((products != null) && (sellers != null) && (sellerHasProductEntries != null) && (sales != null)) { // make sure that problem1() and problem2() get not null values
+            // save the results of methods into corresponding collections
+            Map <Product, SimpleEntry <String, Integer>> problem1 = problem1(sellerHasProductEntries, products, sellers);
+            List <LocalDate> problem2 = problem2(sales);
 
-        // write our json output
-        File output1 = new File("src/output1.json");
-        File output2 = new File("src/output2.json");
-        Writer.writeProblem1JSON(problem1, output1);
-        Writer.writeProblem2JSON(problem2, output2);
+            // write our json output
+            File output1 = new File("src/output1.json");
+            File output2 = new File("src/output2.json");
+            Writer.writeProblem1JSON(problem1, output1);
+            Writer.writeProblem2JSON(problem2, output2);
+        }
+        else {
+            System.err.println("Couldn't read xml-file.");
+        }
 
     }
 

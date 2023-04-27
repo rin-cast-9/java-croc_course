@@ -1,31 +1,53 @@
 package org.example;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 public class Reader {
 
     /**
      * Reads xml file which contains Product entries
      * @param file file to be parsed
-     * @return ArrayList of Product
-     * @throws Exception
+     * @return ArrayList of Product, null if an error occurs
      */
-    static ArrayList <Product> readProductXML (File file) throws Exception {
+    static ArrayList <Product> readProductXML (File file) {
 
-        Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file); // initialize document
+        Document document = null; // initialize document
+        try {
+            document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+        }
+        catch (SAXException e) {
+            System.err.println("An error occurred during parsing xml-file.");
+            return null;
+        }
+        catch (IOException e) {
+            System.err.println("An IO error occurred during parsing xml-file.");
+            return null;
+        }
+        catch (ParserConfigurationException e) {
+            System.err.println("Document builder cannot be created.");
+            return null;
+        }
+        catch (IllegalArgumentException e) {
+            System.err.println("The passed to reader file is null.");
+            return null;
+        }
 
         Element root = document.getDocumentElement(); // get the root element of the document
 
         if (!root.getTagName().equals("products")) { // if it's not products then it's over
+            System.err.println("Root tag name " + root.getTagName() + " is not appropriate for this method.");
             return null;
         }
 
@@ -55,15 +77,35 @@ public class Reader {
     /**
      * Reads xml file which contains Seller entries
      * @param file file to be parsed
-     * @return ArrayList of Seller
-     * @throws Exception
+     * @return ArrayList of Seller, null if an error occurs
      */
-    static ArrayList <Seller> readSellerXML (File file) throws Exception {
-        Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file); // initialize document
+    static ArrayList <Seller> readSellerXML (File file) {
+
+        Document document = null; // initialize document
+        try {
+            document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+        }
+        catch (SAXException e) {
+            System.err.println("An error occurred during parsing xml-file.");
+            return null;
+        }
+        catch (IOException e) {
+            System.err.println("An IO error occurred during parsing xml-file.");
+            return null;
+        }
+        catch (ParserConfigurationException e) {
+            System.err.println("Document builder cannot be created.");
+            return null;
+        }
+        catch (IllegalArgumentException e) {
+            System.err.println("The passed to reader file is null.");
+            return null;
+        }
 
         Element root = document.getDocumentElement(); // get the root element of the document
 
         if (!root.getTagName().equals("sellers")) { // if it's not sellers then it's over
+            System.err.println("Root tag name " + root.getTagName() + " is not appropriate for this method.");
             return null;
         }
 
@@ -94,15 +136,35 @@ public class Reader {
     /**
      * Reads xml file which contains SellerHasProduct entries
      * @param file file to be parsed
-     * @return ArrayList of SellerHasProduct
-     * @throws Exception
+     * @return ArrayList of SellerHasProduct, null if an error occurs
      */
-    static ArrayList <SellerHasProduct> readSellerHasProductXML (File file) throws Exception {
-        Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file); // initialize document
+    static ArrayList <SellerHasProduct> readSellerHasProductXML (File file) {
+
+        Document document = null; // initialize document
+        try {
+            document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+        }
+        catch (SAXException e) {
+            System.err.println("An error occurred during parsing xml-file.");
+            return null;
+        }
+        catch (IOException e) {
+            System.err.println("An IO error occurred during parsing xml-file.");
+            return null;
+        }
+        catch (ParserConfigurationException e) {
+            System.err.println("Document builder cannot be created.");
+            return null;
+        }
+        catch (IllegalArgumentException e) {
+            System.err.println("The passed to reader file is null.");
+            return null;
+        }
 
         Element root = document.getDocumentElement(); // get the root element of the document
 
         if (!root.getTagName().equals("sellerHasProductEntries")) { // if it's not sellerHasProductEntries then it's over
+            System.err.println("Root tag name " + root.getTagName() + " is not appropriate for this method.");
             return null;
         }
 
@@ -134,15 +196,35 @@ public class Reader {
     /**
      * Reads xml file which contains Sale entries
      * @param file file to be parsed
-     * @return ArrayList of Sale
-     * @throws Exception
+     * @return ArrayList of Sale, null if an error occurs
      */
-    static ArrayList <Sale> readSaleXML (File file) throws Exception {
-        Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file); // initialize document
+    static ArrayList <Sale> readSaleXML (File file) {
+
+        Document document = null; // initialize document
+        try {
+            document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+        }
+        catch (SAXException e) {
+            System.err.println("An error occurred during parsing xml-file.");
+            return null;
+        }
+        catch (IOException e) {
+            System.err.println("An IO error occurred during parsing xml-file.");
+            return null;
+        }
+        catch (ParserConfigurationException e) {
+            System.err.println("Document builder cannot be created.");
+            return null;
+        }
+        catch (IllegalArgumentException e) {
+            System.err.println("The passed to reader file is null.");
+            return null;
+        }
 
         Element root = document.getDocumentElement(); // get the root element of the document
 
         if (!root.getTagName().equals("sales")) { // if it's not sales then it's over
+            System.err.println("Root tag name " + root.getTagName() + " is not appropriate for this method.");
             return null;
         }
 
